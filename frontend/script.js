@@ -11,7 +11,6 @@ window.onload = function() {
         })
         .then(response => {
             if (response.status === 401) {
-                // If the server responds with a 401 status, remove the token
                 localStorage.removeItem('token');
                 throw new Error('Unauthorized');
             }
@@ -42,10 +41,10 @@ function currencyFormat(inputValue) {
 async function register(event) {
     event.preventDefault();
 
-    const name = document.getElementById('name-register').value               || 'John Doe';
-    const email = document.getElementById('email-register').value             || 'johnD@gmail.com';
-    const password = document.getElementById('password-register').value       || '123456';
-    const confirmPassword = document.getElementById('password-confirm').value || '123456';
+    const name = document.getElementById('name-register').value;
+    const email = document.getElementById('email-register').value;
+    const password = document.getElementById('password-register').value;
+    const confirmPassword = document.getElementById('password-confirm').value;
 
     if (password !== confirmPassword) {
         alert('Passwords do not match');
@@ -54,25 +53,25 @@ async function register(event) {
 
     const newUser = { name, email, password }
 
-    fetch('/api/user/register', { // Make a POST request to the server
+    fetch('/api/user/register', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newUser)
     })
-    .then(response => response.json()) // Parse the JSON from the response
+    .then(response => response.json())
     .then(data => {
         if (data) {
-            localStorage.setItem('token', data.data.token); // Store the token in the local storage
-            // Redirect to the home page
+            localStorage.setItem('token', data.data.token);
+            window.location.href = 'expenses.html';
         }
     })
-    .catch((error) => alert(error)); // Catch any errors and alert the user
+    .catch((error) => alert(error));
 }
 
 async function login(event) {
     event.preventDefault();
-    const email = document.getElementById('email-login').value                || 'johnD@gmail.com';
-    const password = document.getElementById('password-login').value          || '123456';
+    const email = document.getElementById('email-login').value;
+    const password = document.getElementById('password-login').value;
 
     const existingUser = { email, password }
 
@@ -97,7 +96,7 @@ async function login(event) {
 async function logOut(event) {
     localStorage.removeItem('token');
 
-    if (!window.location.href.endsWith('login.html')) {
+    if (window.location.href.endsWith('expenses.html')) {
         window.location.href = 'login.html';
     }
 }
