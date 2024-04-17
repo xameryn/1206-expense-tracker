@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="form.css"/>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Login</h2>
+                <form id="addLoginForm" onsubmit="login(event)">
+                    <div class="form-group">
+                        <label for="email-login">Email</label>
+                        <input type="email" class="form-control" id="email-login" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-login">Password</label>
+                        <input type="password" class="form-control" id="password-login" placeholder="Enter password">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="button-gloss" id="loginButton">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="button-center">
+            <a href="register.html" class="not-a-member">Not a member?</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

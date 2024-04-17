@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    border: var(--aero-border);
+    background-color: var(--aero-background-color);
+    box-shadow: var(--aero-box-shadow);
+}
+.navbar a, .navbar button {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding-left: var(--radius);
+    padding-right: var(--radius);
+}
+.navbar a:hover, .navbar button:hover {
+    color: #ddd;
+}
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background: var(--gradient);
+    color: white;
+}
+.main {
+    width: 30%;
+}
+.sheet {
+    display: flex;
+    width: 70%;
+    /* min-height: 70vh; */
+    justify-content: center;
+}
+.card.sheet {
+    width: 100%;
+    max-width: 80%;
+    /* height: 80vh; */
+}
+.button-container.side {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.aero-select {
+    padding: 0px;
+    border-radius: var(--radius);
+    border: 0px;
+    background-color: transparent; /* Make the select box transparent */
+    color: white; /* Make the text within it white */
+    font-size: 3rem;
+    font-weight: bold;
+    text-align-last: center;
+}
+.aero-select option {
+    border-radius: var(--radius);
+    border: var(--aero-border);
+    background-color: var(--gradient);
+    box-shadow: var(--aero-box-shadow);
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.table, .tr, .td {
+    color: white;
+}
+.actions {
+    width: 50%;
+}
+th:last-child {
+    width: 10%;
+}
+.button-gloss.wide {
+    width: 48%;
+}
+.button-gloss.small {
+    width: 40px;
+    height: 40px;
+    margin-top: -5px;
+}

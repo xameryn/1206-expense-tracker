@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="form.css"/>
+    <link rel="stylesheet" type="text/css" href="expense.css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="expenses.html">Expenses</a>
+        Welcome, username
+        <a href="#" id="logout" onclick="logOut(event)">Logout</a>
+    </nav>
+    <div class="main-container">
+        <div class="main">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Add Expense</h2>
+                    <form id="addExpenseForm" onsubmit="addExpense(event)">
+                        <div class="form-group"> <!-- Name -->
+                            <label for="expense-name">Item Name</label>
+                            <input type="text" class="form-control" id="expense-name" placeholder="Expense name">
+                        </div>
+                        <div class="form-group"> <!-- Description -->
+                            <label for="expense-description">Description</label>
+                            <input type="text" class="form-control" id="expense-description" placeholder="Expense description">
+                        </div>
+                        <div class="form-group"> <!-- Amount -->
+                            <label for="expense-amount">Amount</label>
+                            <input type="text" class="form-control" pattern="^\d+(\.\d{0,2})?$" id="expense-amount" placeholder="Expense amount ($)">
+                        </div>
+                        <div class="form-group"> <!-- Amount -->
+                            <label for="expense-amount">Date</label>
+                            <input type="date" class="form-control" id="expense-date">
+                        </div>
+                        <div class="form-group"> <!-- Category -->
+                            <label for="expense-category">Category</label>
+                            <select id="expense-category" class="form-control select">
+                                <option value="">Select category</option>
+                                <option value="Food">Food</option>
+                                <option value="Transportation">Transport</option>
+                                <option value="Living">Living Expenses</option>
+                                <option value="Entertainment">Entertainment</option>
+                            </select>
+                        </div>
+                        <div class="button-container side">
+                            <button type="submit" class="button-gloss" id="saveExpenseButton">Add Expense</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="sheet">
+            <div class="card sheet">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Expenses for 
+                        <select id="month-category" class="aero-select" onclick="getExpenses()">
+                            <option value="0">All Months</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="year-category" class="aero-select" onclick="getExpenses()">
+                            <option value="0">Ever</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="expense-list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
