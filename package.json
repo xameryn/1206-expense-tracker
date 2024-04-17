@@ -1,7 +1,6 @@
 {
   "name": "final-project",
   "module": "app.js",
-  "type": "module",
   "devDependencies": {
     "@types/bun": "latest"
   },
