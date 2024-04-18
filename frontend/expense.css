@@ -59,8 +59,8 @@ body {
     padding: 0px;
     border-radius: var(--radius);
     border: 0px;
-    background-color: transparent; /* Make the select box transparent */
-    color: white; /* Make the text within it white */
+    background-color: transparent;
+    color: white;
     font-size: 3rem;
     font-weight: bold;
     text-align-last: center;
@@ -70,7 +70,7 @@ body {
     border: var(--aero-border);
     background-color: var(--gradient);
     box-shadow: var(--aero-box-shadow);
-    color: rgb(0, 0, 0);
+    color: rgb(108, 117, 125);
     font-size: 2rem;
     font-weight: bold;
 }

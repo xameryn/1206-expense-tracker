@@ -5,12 +5,11 @@
     --gradient: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     --background-color: #024950;
     --border-radius: 5px;
-    --transition: 0.3s;
+    --transition: 0.25s;
     --radius: 25px;
-    --aero-background-color: rgba(255, 255, 255, 0.05); /* semi-transparent white */
-    --aero-box-shadow: 0 10px 30px 0 rgba(31, 38, 135, 0.37); /* shadow for glossy effect */
-    --aero-backdrop-filter: blur(0px); /* blur the background behind the card */
-    --aero-border: 1px solid rgba(255, 255, 255, 0.18); /* border for glossy effect */
+    --aero-background-color: rgba(255, 255, 255, 0.05);
+    --aero-box-shadow: 0 10px 30px 0 rgba(31, 38, 135, 0.37);
+    --aero-border: 1px solid rgba(255, 255, 255, 0.18);
 }
 body {
     display: flex;
@@ -57,6 +56,7 @@ body {
 .form-group input {
     width: 100%;
     padding: 10px;
+    padding-left: 15px;
     border-radius: var(--radius);
     border: 0px;
 }
@@ -67,17 +67,6 @@ body {
     border-radius: var(--radius);
     border: 0px;
 }
-.gloss {
-    width: 100%;
-    border: 0px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-.gloss:hover {
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-}
 .button-gloss {
     width: 100%;
     padding: 6px;
@@ -87,11 +76,12 @@ body {
     background-color: var(--aero-background-color);
     box-shadow: var(--aero-box-shadow);
     color: white;
+    background-color: rgba(255, 255, 255, 0);
+    transition: var(--transition);
 }
 .button-gloss:hover {
     cursor: pointer;
-    backdrop-filter: blur(4px);
-    /* FIX BLUR ON HOVER */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 button:focus, select:focus {
     outline: none;
