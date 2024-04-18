@@ -60,9 +60,12 @@ async function register(event) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data) {
+        if (data.data) {
             localStorage.setItem('token', data.data.token);
             window.location.href = 'expenses.html';
+        }
+        else {
+            alert(data.message);
         }
     })
     .catch((error) => alert(error));

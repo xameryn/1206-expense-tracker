@@ -7,7 +7,7 @@ const RegisterUser = async (req, res) => {
 
     if (!userBody.email || !userBody.password || !userBody.name) {
         return res.status(400).json({
-            message: 'Email, Password or name missing!'
+            message: 'Email, Password or Name missing!'
         });
     }
 
@@ -42,28 +42,12 @@ const RegisterUser = async (req, res) => {
     }
 }
 
-const GetUsers = async (req, res) => {
-
-    try {
-        const users = await UserModel.find();
-        return res.status(200).json({
-            message: 'Succesfully found the users!',
-            data: users
-        })
-    } catch (error) {
-        return res.status(500).json({
-            message: 'Error fetching users!',
-            error
-        })
-    }
-}
-
 const LoginUser = async (req, res) => {
     const userBody = req.body;
     
     if (!userBody.email || !userBody.password) {
         return res.status(400).json({
-            message: 'Email, Password or name missing!'
+            message: 'Email, Password or Name missing!'
         });
     }
 
@@ -125,7 +109,6 @@ const GetUser = async (req, res) => {
 
 module.exports = {
     RegisterUser,
-    GetUsers,
     LoginUser,
     GetUser
 }
