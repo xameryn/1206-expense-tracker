@@ -1,4 +1,4 @@
-# final-project
+# Expense Tracker - MongoDB
 
 To install dependencies:
 
